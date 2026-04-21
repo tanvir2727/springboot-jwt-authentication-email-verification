@@ -41,7 +41,7 @@ public class JwtHelper {
         return Jwts.builder()
                 .setSubject("#refresh"+username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()+ ApplicationConstants.ACCESS_TOKEN_VALIDITY_SECONDS*1000))
+                .setExpiration(new Date(System.currentTimeMillis()+ ApplicationConstants.REFRESH_TOKEN_VALIDITY_SECONDS*1000))
                 .setId(UUID.randomUUID().toString())
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();

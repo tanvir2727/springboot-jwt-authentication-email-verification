@@ -46,7 +46,7 @@ public class AuthenticationController implements AuthenticationInterface {
         return authenticationService.resendOtp(forgotPasswordRequest);
     }
 
-    @PostMapping(value = "verify-otp", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/verify-otp", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> verifyOtp(@Valid @RequestBody RegisterVerifyRequest registerVerifyRequest){
         log.info("verify otp request received for email {}", registerVerifyRequest.getEmail());
         return authenticationService.verifyOtp(registerVerifyRequest);
